@@ -6,7 +6,7 @@ RegistrySystem::RegistrySystem()
     CreateDB();
 }
 
-std::string AskChoice(std::string choices[], std::string init_message, std::string end_message, std::string wrong_input_message) {
+std::string RegistrySystem::AskChoice(std::string choices[], std::string init_message, std::string end_message, std::string wrong_input_message) {
     std::string choice;
     std::cout << init_message;
     std::getline(std::cin, choice);
