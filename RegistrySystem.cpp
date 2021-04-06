@@ -6,6 +6,20 @@ RegistrySystem::RegistrySystem()
     CreateDB();
 }
 
+std::string AskChoice(std::string choices[], std::string init_message, std::string end_message, std::string wrong_input_message) {
+    std::string choice;
+    std::cout << init_message;
+    std::getline(std::cin, choice);
+    for (int index = 0; index < sizeof(choices); index++) {
+        if (choice == choices[index]) {
+            std::cout << end_message;
+            return choice;
+        }
+    }
+    std::cout << wrong_input_message;
+    return AskChoice(choices, init_message, end_message, wrong_input_message);
+}
+
 std::string RegistrySystem::Login()
 {
     std::string password; // info from database
