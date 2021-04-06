@@ -26,4 +26,7 @@ private:
 
 	// When logging in, gets the password for the username typed in by the anon
 	std::string GetUsernamePassword(std::string typed_username);
+	
+	// Demands user selects one of the choices
+	std::string AskChoice(std::string choices[], std::string init_message, std::string end_message, std::string wrong_input_message);
 };
